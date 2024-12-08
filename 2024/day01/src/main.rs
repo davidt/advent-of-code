@@ -24,13 +24,13 @@ fn main() {
     list1.sort();
     list2.sort();
 
-    let distance: i32 = zip(list1.clone(), list2)
+    let distance: i32 = zip(list1.iter(), list2.iter())
         .map(|(a, b)| (b - a).abs())
         .sum();
 
     println!("Distance: {}", distance);
 
-    let similarity: i32 = list1.clone().iter()
+    let similarity: i32 = list1.iter()
         .map(|x| {
             let count = counts.get(x).unwrap_or(&0);
             x * count
