@@ -8,10 +8,18 @@ fn next_positions(w: usize, h: usize, position: &Position) -> Vec<Position> {
     let mut positions: Vec<Position> = Vec::new();
     let (x, y) = *position;
 
-    if y > 0 { positions.push((x, y - 1)); /* North */ }
-    if x + 1 < w { positions.push((x + 1, y)); /* East */ }
-    if y + 1 < h { positions.push((x, y + 1)); /* South */ }
-    if x > 0 { positions.push((x - 1, y)); /* West */ }
+    if y > 0 {
+        positions.push((x, y - 1)); /* North */
+    }
+    if x + 1 < w {
+        positions.push((x + 1, y)); /* East */
+    }
+    if y + 1 < h {
+        positions.push((x, y + 1)); /* South */
+    }
+    if x > 0 {
+        positions.push((x - 1, y)); /* West */
+    }
 
     positions
 }
